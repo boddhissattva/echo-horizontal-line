@@ -1,0 +1,9 @@
+Package: horizontal-line
+Version: 1.0-1
+Section: base
+Priority: optional
+Architecture: all
+Maintainer: Jean Yvan Tissot  <jean.yvan.tissot@gmail.com>
+Description: 
+ print horizontal line of the terminal width with possible sentence in the middle.
+Homepage: https://github.com/boddhissattva/ 

@@ -1,0 +1,81 @@
+#!/bin/bash
+# Print horitontal line of the terminal width of the given width WIDTH with a word in the middle. Print a simple horizontal line if NAME is not given.
+# echo-horizontal-line [ WORD [WIDTH] ]
+WIDTH_GIVEN=""
+WORD=""
+VERSION=1.0
+
+
+while [ $# -ge 1 ]
+        do
+            key="$1"
+            case $key in
+                -h|--help)
+                    man -l /usr/share/man/man1/$0.1
+                    exit
+                    ;;
+                -v|--version)
+                    echo "$0 version $VERSION"
+                    exit
+                    ;;
+                [0-550]* ) WIDTH_GIVEN=$1
+                ;;
+                *) WORD=$1
+                    ;;
+            esac
+            shift
+        done
+
+if [ -z "$WORD" ]
+    then
+printf '%*s\n' "${WIDTH_GIVEN:-$(tput cols)}" '' | tr ' ' -
+exit
+fi
+
+NUMBER_OF_SPACES_SURROUNDING_THE_WORD=1
+TERMINAL_WIDTH=${WIDTH_GIVEN:-$(tput cols)}
+WORD_SIZE=$(($(echo $WORD | wc -c ) -1 ))
+NUMBER_OF_SYMBOLS=$(( $TERMINAL_WIDTH - $WORD_SIZE - 2*$NUMBER_OF_SPACES_SURROUNDING_THE_WORD ))
+LENGTH_OF_RIGHT_PART=$((NUMBER_OF_SYMBOLS/2 + $NUMBER_OF_SYMBOLS%2/2 ))
+LENGTH_OF_LEFT_PART=$(( $TERMINAL_WIDTH - $WORD_SIZE -2*NUMBER_OF_SPACES_SURROUNDING_THE_WORD - $LENGTH_OF_RIGHT_PART   ))
+
+printf '%*s' "$LENGTH_OF_LEFT_PART" '' | tr " " -
+printf '%*s' $NUMBER_OF_SPACES_SURROUNDING_THE_WORD
+printf "$WORD"
+printf '%*s' $NUMBER_OF_SPACES_SURROUNDING_THE_WORD
+printf '%*s\n' "$((LENGTH_OF_RIGHT_PART))" '' | tr " " -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

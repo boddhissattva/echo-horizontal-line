@@ -1,0 +1,43 @@
+.TH horizontal-line v1.0  1 1-07-2016 "Linux Programmer\'s Manual"
+.SH NAME
+
+.B horizontal-line\c
+ - print horizontal line of the terminal width with possible sentence in the middle.
+.SH SYNOPSIS
+.B horizontal-line 
+[\c
+.B WORDS\c
+] [\c
+.B WIDTH\c
+] [\c
+.B -h\c
+|\c
+.B --help
+] [\c
+.B -v\c
+|\c
+.B --version
+]
+
+.SH OVERVIEW
+If
+.B WORDS
+is given, an horizontal line is printed with the string WORDS in the middle. 
+
+.B WIDTH 
+is the width of the line.
+
+.B -h
+and
+.B -v
+display the manual and the current version respectively.
+
+.SH EXAMPLES
+.nf
+$ horizontal-line
+$ horizontal-line "my words"
+$ horizontal-line "my words" 20
+
+.SH CONTACTS
+
+For any suggestion or question, please send a mail at jean.yvan.tissot[at]gmail.com. Issues can be reported at http://github.com/boddhissattva/horizontal-line/issues
