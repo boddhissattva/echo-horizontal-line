@@ -20,7 +20,8 @@ while [ $# -ge 1 ]
                     ;;
                 [0-550]* ) WIDTH_GIVEN=$1
                 ;;
-                *) WORD=$1
+                *) WORD="$@"
+                    break
                     ;;
             esac
             shift
@@ -34,7 +35,7 @@ fi
 
 NUMBER_OF_SPACES_SURROUNDING_THE_WORD=1
 TERMINAL_WIDTH=${WIDTH_GIVEN:-$(tput cols)}
-WORD_SIZE=$(($(echo $WORD | wc -c ) -1 ))
+WORD_SIZE=$(($(echo "$WORD" | wc -c ) -1 ))
 NUMBER_OF_SYMBOLS=$(( $TERMINAL_WIDTH - $WORD_SIZE - 2*$NUMBER_OF_SPACES_SURROUNDING_THE_WORD ))
 LENGTH_OF_RIGHT_PART=$((NUMBER_OF_SYMBOLS/2 + $NUMBER_OF_SYMBOLS%2/2 ))
 LENGTH_OF_LEFT_PART=$(( $TERMINAL_WIDTH - $WORD_SIZE -2*NUMBER_OF_SPACES_SURROUNDING_THE_WORD - $LENGTH_OF_RIGHT_PART   ))
