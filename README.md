@@ -1,17 +1,17 @@
-#Horizontal-line (v1.0) 
+# Horizontal-line (v1.0) 
 
-##Name
+## Name
 `horizontal-line` - print horizontal line of the terminal width with possible sentence in the middle.
 
 ## Install
 
     dpkg -i horizontal-line_1.0-1.deb
 
-##Synopsis
+##i Synopsis
 
     horizontal-line [WORDS] [WIDTH] [-h|--help ] [-v|--version ]
 
-##Overview
+## Overview
 If `WORDS` is given, an horizontal line is printed with the string WORDS in the middle.
 
 `WIDTH` is the width of the line.
@@ -20,8 +20,11 @@ If `WORDS` is given, an horizontal line is printed with the string WORDS in the 
 
 # Examples
        $ horizontal-line
+    ----------------------------------------------------------
        $ horizontal-line "my words"
+    ------------------------ my words ------------------------
        $ horizontal-line "my words" 20
+    ---- my words ----
 
 ##Contacts
 
