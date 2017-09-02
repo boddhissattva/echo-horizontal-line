@@ -7,7 +7,7 @@
 
     dpkg -i horizontal-line_1.0-1.deb
 
-##i Synopsis
+## Synopsis
 
     horizontal-line [WORDS] [-h|--help ] [-v|--version ]
 
