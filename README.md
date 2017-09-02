@@ -9,12 +9,10 @@
 
 ##i Synopsis
 
-    horizontal-line [WORDS] [WIDTH] [-h|--help ] [-v|--version ]
+    horizontal-line [WORDS] [-h|--help ] [-v|--version ]
 
 ## Overview
 If `WORDS` is given, an horizontal line is printed with the string WORDS in the middle.
-
-`WIDTH` is the width of the line.
 
 `-h` and `-v` display the manual and the current version respectively.
 
@@ -23,8 +21,6 @@ If `WORDS` is given, an horizontal line is printed with the string WORDS in the 
     ----------------------------------------------------------
        $ horizontal-line "my words"
     ------------------------ my words ------------------------
-       $ horizontal-line "my words" 20
-    ---- my words ----
 
 ##Contacts
 
